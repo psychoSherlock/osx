@@ -244,6 +244,7 @@ body {
 .menus,
 .apple-logo,
 .menu-ico,
-.menu-time {
+.menu-time,
+.ico {
   cursor: url("../images/icons/bigSurPointer.png"), auto !important;
 }
