@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import TrashIcon from "../images/icons/trash.png";
 import FinderIcon from "../images/icons/finder.png";
 import SiriIcon from "../images/icons/siri.png";
@@ -14,7 +14,8 @@ import PodcastsIcon from "../images/icons/podcasts.png";
 import TvIcon from "../images/icons/tv.png";
 import AppStoreIcon from "../images/icons/appstore.png";
 import SafariIcon from "../images/icons/safari.png";
-
+import { observer } from "mobx-react";
+import { StoreContext } from "../store";
 const DockIcon = ({ src }) => {
   return (
     <div>
@@ -23,7 +24,11 @@ const DockIcon = ({ src }) => {
   );
 };
 
-function LowerDock() {
+const LowerDock = observer(() => {
+  const store = useContext(StoreContext);
+  const handleFinderClick = () => {
+    store.toggleMax();
+  };
   useEffect(() => {
     const icons = document.querySelectorAll(".ico");
     const length = icons.length;
@@ -130,6 +135,6 @@ function LowerDock() {
       </div>
     </div>
   );
-}
+});
 
 export default LowerDock;

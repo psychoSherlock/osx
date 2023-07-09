@@ -31,20 +31,21 @@ const LeftPanel = () => {
   );
 };
 
-const WindowActions = ({ handleClose }) => {
+const WindowActions = ({ handleClose, handleMin }) => {
   return (
     <div className="window-actions">
       <i
         className="window-close fa-solid fa-circle-xmark"
         onClick={handleClose}
       ></i>
-      <i className="window-min fa-solid fa-minus"></i>
+      <i className="window-min fa-solid fa-minus" onClick={handleMin}></i>
       <i className="window-max fa-solid fa-up-right-and-down-left-from-center"></i>
     </div>
   );
 };
 
 function FinderWindow() {
+  //------------------- Window Events - Handle Close----------------
   const [isActive, setIsActive] = useState(true);
   const [isWindowClosed, setIsWindowClosed] = useState(false);
 
@@ -56,13 +57,27 @@ function FinderWindow() {
       console.log(isWindowClosed);
     }, 500);
   };
+
+  //------------------- Window Events - Handle Min----------------
+  const [isMax, setIsMax] = useState(true);
+
+  const handleMin = () => {
+    setIsMax(false);
+    console.log(isMax);
+    setTimeout(() => {
+      setIsWindowClosed(true);
+      console.log(isWindowClosed);
+    }, 500);
+  };
+
+  //---------------------- Window Events -----------------
   return (
     <div
-      className={`finder-window  ${isWindowClosed ? "closed-window" : ""} ${
-        isActive ? "window-active" : "window-inactive"
-      }`}
+      className={`finder-window ${isMax ? "" : "finder-closed"}  ${
+        isWindowClosed ? "closed-window" : ""
+      } ${isActive ? "window-active" : "window-inactive"}`}
     >
-      <WindowActions handleClose={handleClose} />
+      <WindowActions handleClose={handleClose} handleMin={handleMin} />
       <LeftPanel />
       <div className="finder-explorer"></div>
     </div>

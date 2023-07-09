@@ -4,6 +4,7 @@ import "./styles/styles.css";
 import "./styles/docks.css";
 import LowerDock from "./components/LowerDock";
 import FinderWindow from "./components/FinderWindow";
+
 function App() {
   return (
     <div className="App">
