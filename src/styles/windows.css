@@ -9,8 +9,7 @@
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   overflow: hidden; /* Ensure content is within rounded corners */
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 .finder-left-panel {
@@ -61,7 +60,6 @@
 
 .window-actions {
   position: absolute;
-  /* background-color: red; */
   height: auto;
   display: flex;
   width: 19.3%;
@@ -74,8 +72,16 @@
 .window-actions i {
   font-size: 0.6em;
   /* cursor: var(--macHand); */
-  cursor: pointer;
+  /* cursor: pointer; */
+  transform: scale(1);
+  transition: transform 100ms ease, background-color 500ms ease,
+    color 500ms ease;
 }
+
+.window-actions:hover i {
+  transform: scale(1.2);
+}
+
 .window-actions .window-close {
   color: #ff2d55;
   border-radius: 100%;
@@ -118,4 +124,23 @@
   padding-bottom: 1em;
   color: #aeaeb2;
   font-weight: bold;
+}
+
+.window-inactive {
+  animation: squeeze-window 500ms ease forwards;
+}
+
+@keyframes squeeze-window {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.closed-window {
+  display: none;
 }

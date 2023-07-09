@@ -73,3 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 [ ] Think about mac pointer required or not?
 [ ] Mac Finder can be imrpved, with titles for panel
+[ ] https://macos-web.app/

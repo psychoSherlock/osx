@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/windows.css";
 const LeftPanel = () => {
   return (
@@ -31,20 +31,38 @@ const LeftPanel = () => {
   );
 };
 
-const WindowActions = () => {
+const WindowActions = ({ handleClose }) => {
   return (
     <div className="window-actions">
-      <i class="window-close fa-solid fa-circle-xmark"></i>
-      <i class="window-min fa-solid fa-minus"></i>
-      <i class="window-max fa-solid fa-up-right-and-down-left-from-center"></i>
+      <i
+        className="window-close fa-solid fa-circle-xmark"
+        onClick={handleClose}
+      ></i>
+      <i className="window-min fa-solid fa-minus"></i>
+      <i className="window-max fa-solid fa-up-right-and-down-left-from-center"></i>
     </div>
   );
 };
 
 function FinderWindow() {
+  const [isActive, setIsActive] = useState(true);
+  const [isWindowClosed, setIsWindowClosed] = useState(false);
+
+  const handleClose = () => {
+    setIsActive(false);
+    console.log(isActive);
+    setTimeout(() => {
+      setIsWindowClosed(true);
+      console.log(isWindowClosed);
+    }, 500);
+  };
   return (
-    <div className="finder-window">
-      <WindowActions />
+    <div
+      className={`finder-window  ${isWindowClosed ? "closed-window" : ""} ${
+        isActive ? "window-active" : "window-inactive"
+      }`}
+    >
+      <WindowActions handleClose={handleClose} />
       <LeftPanel />
       <div className="finder-explorer"></div>
     </div>
