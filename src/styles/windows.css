@@ -1,2 +1,101 @@
 .finder-window {
+  width: 50em;
+  height: 30em;
+  position: absolute;
+  top: 5em;
+  left: 10em;
+  display: flex;
+  flex-direction: row;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  overflow: hidden; /* Ensure content is within rounded corners */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.finder-left-panel {
+  background-color: rgba(58, 58, 60, 0.7);
+  width: 12em;
+}
+
+.finder-explorer {
+  background-color: #242226;
+  width: 100%;
+  position: relative;
+}
+
+.left-panel-items {
+  margin-top: 3.5em;
+}
+
+.panel-item-active {
+  background-color: #5b595c;
+}
+
+.panel-item {
+  height: auto;
+  padding: 0.4em 0em;
+  text-align: left;
+}
+.panel-item span {
+  color: white;
+  font-size: 0.85em;
+  margin-left: 1.1em;
+  vertical-align: middle;
+}
+
+.panel-item i {
+  color: #8e8e93;
+  vertical-align: middle;
+  margin-left: 1em;
+  color: #0e79e6;
+}
+
+.window-actions {
+  position: absolute;
+  /* background-color: red; */
+  height: auto;
+  display: flex;
+  width: 19.3%;
+  justify-content: left;
+  align-items: center;
+  top: 1em;
+  left: 1em;
+  gap: 1em;
+}
+.window-actions i {
+  font-size: 0.6em;
+  /* cursor: var(--macHand); */
+  cursor: pointer;
+}
+.window-actions .window-close {
+  color: #ff2d55;
+  border-radius: 100%;
+  background-color: #ff2d55;
+  font-size: 0.9em;
+}
+
+.window-actions .window-close:hover {
+  background-color: #4b4c4e;
+}
+
+.window-actions .window-min {
+  background-color: #ffd60a;
+  padding: 0.3em;
+  border-radius: 100%;
+  color: #ffd60a;
+}
+
+.window-actions .window-min:hover {
+  color: #4b4c4e;
+}
+.window-actions .window-max {
+  background-color: #32d74b;
+  padding: 0.3em;
+  border-radius: 100%;
+  color: #32d74b;
+}
+
+.window-actions .window-max:hover {
+  color: #4b4c4e;
 }

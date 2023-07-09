@@ -1,3 +1,8 @@
+/* :root {
+  --macPointer: url("../images/icons/bigSurDefault.png"), auto;
+  --macHand: url("../images/icons/bigSurPointer.png"), auto;
+} */
+
 *,
 html,
 body {
@@ -21,19 +26,9 @@ a {
 
 /* Styling the cursor */
 .App {
-  /* cursor: none; */
-  cursor: url("../images/icons/bigSurDefault.png"), auto;
+  /* cursor: var(--macPointer); */
 }
 /* https://github.com/ful1e5/apple_cursor/blob/main/svg/bigsur/static/hand2.svg */
-.selection-box {
-  position: absolute;
-  border: 2px dashed rgba(0, 122, 255, 0.8); /* Adjust the color as needed */
-  background-color: rgba(
-    0,
-    122,
-    255,
-    0.2
-  ); /* Adjust the color and opacity as needed */
-  pointer-events: none;
-  z-index: 9999;
+li {
+  list-style: none;
 }

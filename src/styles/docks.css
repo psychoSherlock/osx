@@ -246,5 +246,6 @@ body {
 .menu-ico,
 .menu-time,
 .ico {
-  cursor: url("../images/icons/bigSurPointer.png"), auto !important;
+  /* cursor: var(--macHand); */
+  cursor: pointer;
 }
