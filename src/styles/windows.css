@@ -28,8 +28,16 @@
   margin-top: 3.5em;
 }
 
+.panel-item {
+  cursor: pointer;
+}
+
 .panel-item-active {
   background-color: #5b595c;
+}
+
+.panel-item:hover {
+  background-color: #636366;
 }
 
 .panel-item {
@@ -98,4 +106,16 @@
 
 .window-actions .window-max:hover {
   color: #4b4c4e;
+}
+
+.left-panel-caption {
+  font-weight: bold;
+  font-family: "Helvetica Neue Bold";
+  letter-spacing: 0.5px;
+  font-size: 0.8em;
+  text-align: left;
+  vertical-align: middle;
+  padding-bottom: 1em;
+  color: #aeaeb2;
+  font-weight: bold;
 }

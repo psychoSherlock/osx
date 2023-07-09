@@ -3,6 +3,39 @@
   --macHand: url("../images/icons/bigSurPointer.png"), auto;
 } */
 
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 800;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/Helvetica_Neue_Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Helvetica Neue Bold";
+  src: url("../fonts/Helvetica_Neue_Bold.otf") format("opentype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Lucida Grande";
+  src: url("../fonts/LucidaGrande.ttf");
+}
+
+@font-face {
+  font-family: "Lucida Grande Bold";
+  src: url("../fonts/LucidaGrandeBold.ttf");
+  font-weight: bold;
+}
+
 *,
 html,
 body {

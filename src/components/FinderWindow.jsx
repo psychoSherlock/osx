@@ -4,6 +4,7 @@ const LeftPanel = () => {
   return (
     <div className="finder-left-panel">
       <ul className="left-panel-items">
+        <span className="left-panel-caption">Favorites</span>
         <li className="panel-item panel-item-active">
           <i className="fas fa-house"></i>
           <span>Home</span>
