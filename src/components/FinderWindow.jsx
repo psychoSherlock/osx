@@ -31,7 +31,7 @@ const LeftPanel = () => {
   );
 };
 
-const WindowActions = ({ handleClose, handleMin }) => {
+const WindowActions = ({ handleClose, handleMin, handleMax }) => {
   return (
     <div className="window-actions">
       <i
@@ -39,7 +39,10 @@ const WindowActions = ({ handleClose, handleMin }) => {
         onClick={handleClose}
       ></i>
       <i className="window-min fa-solid fa-minus" onClick={handleMin}></i>
-      <i className="window-max fa-solid fa-up-right-and-down-left-from-center"></i>
+      <i
+        className="window-max fa-solid fa-up-right-and-down-left-from-center"
+        onClick={handleMax}
+      ></i>
     </div>
   );
 };
@@ -48,6 +51,7 @@ function FinderWindow() {
   //------------------- Window Events - Handle Close----------------
   const [isActive, setIsActive] = useState(true);
   const [isWindowClosed, setIsWindowClosed] = useState(false);
+  const [isMaximized, setIsMaximized] = useState(false);
 
   const handleClose = () => {
     setIsActive(false);
@@ -57,6 +61,12 @@ function FinderWindow() {
       console.log(isWindowClosed);
     }, 500);
   };
+
+  //------------------- Window Events - Handle Min----------------
+  const handleMax = () => {
+    setIsMaximized(!isMaximized);
+  };
+  //--------------------------------------------------------------
 
   //------------------- Window Events - Handle Min----------------
   const [isMax, setIsMax] = useState(true);
@@ -73,11 +83,17 @@ function FinderWindow() {
   //---------------------- Window Events -----------------
   return (
     <div
-      className={`finder-window ${isMax ? "" : "finder-closed"}  ${
+      className={`finder-window window ${
+        isMaximized ? "maximized-window" : ""
+      } ${isMax ? "" : "finder-closed"}  ${
         isWindowClosed ? "closed-window" : ""
       } ${isActive ? "window-active" : "window-inactive"}`}
     >
-      <WindowActions handleClose={handleClose} handleMin={handleMin} />
+      <WindowActions
+        handleClose={handleClose}
+        handleMin={handleMin}
+        handleMax={handleMax}
+      />
       <LeftPanel />
       <div className="finder-explorer"></div>
     </div>

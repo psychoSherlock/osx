@@ -1,0 +1,38 @@
+.desktop-container {
+  /* background-color: yellow; */
+  width: 100%;
+  height: calc(100% - 90px);
+  margin-top: 30px;
+  /* background-color: transparent; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  z-index: 1;
+}
+
+.skill {
+  margin: 0.5em;
+  width: 5em;
+  height: 5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 500ms ease;
+  padding-top: 0.3em;
+  border-radius: 1em;
+}
+
+.skill:hover {
+  background-color: rgba(58, 58, 60, 0.5);
+}
+.skill span {
+  font-size: 0.8em;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.95);
+}

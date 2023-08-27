@@ -13,7 +13,7 @@
 }
 
 .finder-left-panel {
-  background-color: rgba(58, 58, 60, 0.7);
+  background-color: rgba(58, 58, 60, 0.8);
   width: 12em;
 }
 
@@ -159,4 +159,21 @@
     left: 0.1em;
     top: 12em;
   }
+}
+
+.window-active {
+  z-index: 10;
+}
+
+.maximized-window {
+  left: 0em;
+  width: 100%;
+  height: calc(100% - 2em);
+  top: 30px;
+  border-radius: 0;
+}
+/* window maximize animation */
+.window {
+  transition: left 500ms ease, height 500ms ease, width 500ms ease,
+    top 500ms ease, border-radius 1s ease;
 }
