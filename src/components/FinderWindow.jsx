@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 import "../styles/windows.css";
+import FinderItems from "./FinderItems";
+import { BiChevronLeft, BiChevronRight, BiSearchAlt } from "react-icons/bi";
+import IconButton from "@mui/material/IconButton";
+import { IoHomeOutline } from "react-icons/io5";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { MdOutlineMenu } from "react-icons/md";
+import { BsThreeDots } from "react-icons/bs";
 const LeftPanel = () => {
   return (
     <div className="finder-left-panel">
@@ -43,6 +50,50 @@ const WindowActions = ({ handleClose, handleMin, handleMax }) => {
         className="window-max fa-solid fa-up-right-and-down-left-from-center"
         onClick={handleMax}
       ></i>
+    </div>
+  );
+};
+
+const FinderNav = () => {
+  return (
+    <div className="finder-nav">
+      <div className="finder-nav-left">
+        <IconButton>
+          <BiChevronLeft color="#fff" size={23} />
+        </IconButton>
+        <IconButton>
+          <BiChevronRight color="#969797" size={23} />
+        </IconButton>
+        <IconButton>
+          <IoHomeOutline color="rgba(255, 255, 255, 0.64)" size={18} />
+        </IconButton>
+        <span
+          style={{
+            fontSize: "0.9em",
+            color: "white",
+          }}
+        >
+          Home
+        </span>
+        <IconButton>
+          <IoMdArrowDropdown color="white" size={20} />
+        </IconButton>
+      </div>
+
+      <div className="finder-nav-right">
+        <IconButton>
+          <BiSearchAlt color="white" size={18} />
+        </IconButton>
+        <IconButton>
+          <MdOutlineMenu color="white" size={18} />
+        </IconButton>
+        <IconButton>
+          <IoMdArrowDropdown color="white" size={18} />
+        </IconButton>
+        <IconButton>
+          <BsThreeDots size={18} color="white" />
+        </IconButton>
+      </div>
     </div>
   );
 };
@@ -95,7 +146,10 @@ function FinderWindow() {
         handleMax={handleMax}
       />
       <LeftPanel />
-      <div className="finder-explorer"></div>
+      <div className="finder-explorer">
+        <FinderNav />
+        {/* <FinderItems /> */}
+      </div>
     </div>
   );
 }
